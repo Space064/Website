@@ -3,69 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
+    <title>Tabbed Interface Example</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
+        /* Styling for the tabs */
+        .tab {
+            display: inline-block;
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #ddd;
+            border-radius: 5px 5px 0 0;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px 0;
-            text-align: center;
-        }
-        nav {
-            background-color: #444;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-        }
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-        nav a:hover {
-            text-decoration: underline;
-        }
-        section {
+
+        /* Styling for the content of each tab */
+        .tab-content {
+            display: none;
             padding: 20px;
+            border: 1px solid #ddd;
+            border-top: none;
         }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: absolute;
-            bottom: 0;
-            width: 100%;
+
+        /* Styling for the active tab */
+        .active {
+            background-color: #ccc;
+        }
+
+        /* Styling for hover effect on tabs */
+        .tab:hover {
+            background-color: #ccc;
         }
     </style>
 </head>
 <body>
+    <div class="tab" onclick="openTab('tab1')">Tab 1</div>
+    <div class="tab" onclick="openTab('tab2')">Tab 2</div>
+    <div class="tab" onclick="openTab('tab3')">Tab 3</div>
 
-<header>
-    <h1>Welcome to My Website</h1>
-</header>
+    <!-- Content for each tab -->
+    <div id="tab1" class="tab-content">
+        <h2>Tab 1 Content</h2>
+        <p>This is the content for Tab 1. Replace this text with your own content.</p>
+    </div>
+    <div id="tab2" class="tab-content">
+        <h2>Tab 2 Content</h2>
+        <p>This is the content for Tab 2. Replace this text with your own content.</p>
+    </div>
+    <div id="tab3" class="tab-content">
+        <h2>Tab 3 Content</h2>
+        <p>This is the content for Tab 3. Replace this text with your own content.</p>
+    </div>
 
-<nav>
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-</nav>
-
-<section>
-    <h2>About Us</h2>
-    <p>This is a sample website created using HTML.</p>
-</section>
-
-<footer>
-    <p>&copy; 2024 My Website. All rights reserved.</p>
-</footer>
-
+    <script>
+        // Function to open a tab and hide other tabs
+        function openTab(tabName) {
+            var i;
+            var tabContent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabContent.length; i++) {
+                tabContent[i].style.display = "none";
+            }
+            var tabs = document.getElementsByClassName("tab");
+            for (i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            document.getElementById(tabName).style.display = "block";
+            event.currentTarget.classList.add("active");
+        }
+    </script>
 </body>
 </html>
