@@ -3,22 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Tabbed Website</title>
+    <title>Modern Tabbed Website</title>
     <style>
-        /* Global styles */
-        body {
-            font-family: Arial, sans-serif;
+        /* Resetting default margin and padding */
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
+            box-sizing: border-box;
+        }
+
+        /* Global styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
         }
 
         /* Header styles */
         header {
             background-color: #333;
             color: #fff;
-            padding: 20px;
+            padding: 40px 0;
             text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
         }
 
         /* Main container styles */
@@ -26,23 +38,24 @@
             max-width: 800px;
             margin: 20px auto;
             background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Tab styles */
         .tabs {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            margin-top: 40px;
         }
 
         .tab {
-            padding: 10px 20px;
+            padding: 15px 25px;
             cursor: pointer;
             background-color: #ddd;
             border-radius: 5px 5px 0 0;
             margin-right: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .tab:hover {
@@ -52,7 +65,7 @@
         /* Content styles */
         .tab-content {
             display: none;
-            padding: 20px;
+            padding: 40px;
         }
 
         /* Active tab styles */
@@ -63,7 +76,7 @@
 </head>
 <body>
     <header>
-        <h1>Welcome to Simple Tabbed Website</h1>
+        <h1>Welcome to Modern Tabbed Website</h1>
     </header>
     <div class="container">
         <!-- Tabs -->
