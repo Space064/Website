@@ -3,53 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabbed Interface Example</title>
+    <title>Simple Tabbed Website</title>
     <style>
-        /* Styling for the tabs */
+        /* Global styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+        }
+
+        /* Header styles */
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        /* Main container styles */
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Tab styles */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
         .tab {
-            display: inline-block;
             padding: 10px 20px;
             cursor: pointer;
             background-color: #ddd;
             border-radius: 5px 5px 0 0;
+            margin-right: 5px;
         }
 
-        /* Styling for the content of each tab */
-        .tab-content {
-            display: none;
-            padding: 20px;
-            border: 1px solid #ddd;
-            border-top: none;
-        }
-
-        /* Styling for the active tab */
-        .active {
+        .tab:hover {
             background-color: #ccc;
         }
 
-        /* Styling for hover effect on tabs */
-        .tab:hover {
+        /* Content styles */
+        .tab-content {
+            display: none;
+            padding: 20px;
+        }
+
+        /* Active tab styles */
+        .active {
             background-color: #ccc;
         }
     </style>
 </head>
 <body>
-    <div class="tab" onclick="openTab('tab1')">Tab 1</div>
-    <div class="tab" onclick="openTab('tab2')">Tab 2</div>
-    <div class="tab" onclick="openTab('tab3')">Tab 3</div>
+    <header>
+        <h1>Welcome to Simple Tabbed Website</h1>
+    </header>
+    <div class="container">
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab" onclick="openTab('tab1')">Tab 1</div>
+            <div class="tab" onclick="openTab('tab2')">Tab 2</div>
+            <div class="tab" onclick="openTab('tab3')">Tab 3</div>
+        </div>
 
-    <!-- Content for each tab -->
-    <div id="tab1" class="tab-content">
-        <h2>Tab 1 Content</h2>
-        <p>This is the content for Tab 1. Replace this text with your own content.</p>
-    </div>
-    <div id="tab2" class="tab-content">
-        <h2>Tab 2 Content</h2>
-        <p>This is the content for Tab 2. Replace this text with your own content.</p>
-    </div>
-    <div id="tab3" class="tab-content">
-        <h2>Tab 3 Content</h2>
-        <p>This is the content for Tab 3. Replace this text with your own content.</p>
+        <!-- Content for each tab -->
+        <div id="tab1" class="tab-content">
+            <h2>Tab 1 Content</h2>
+            <p>This is the content for Tab 1. Replace this text with your own content.</p>
+        </div>
+        <div id="tab2" class="tab-content">
+            <h2>Tab 2 Content</h2>
+            <p>This is the content for Tab 2. Replace this text with your own content.</p>
+        </div>
+        <div id="tab3" class="tab-content">
+            <h2>Tab 3 Content</h2>
+            <p>This is the content for Tab 3. Replace this text with your own content.</p>
+        </div>
     </div>
 
     <script>
