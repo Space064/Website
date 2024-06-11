@@ -3,119 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modern Tabbed Website</title>
+    <title>Password Protected Page</title>
     <style>
-        /* Resetting default margin and padding */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        /* Global styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header styles */
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 40px 0;
-            text-align: center;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-
-        /* Main container styles */
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Tab styles */
-        .tabs {
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
-            margin-top: 40px;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
         }
-
-        .tab {
-            padding: 15px 25px;
-            cursor: pointer;
-            background-color: #ddd;
-            border-radius: 5px 5px 0 0;
-            margin-right: 5px;
-            transition: background-color 0.3s ease;
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .tab:hover {
-            background-color: #ccc;
-        }
-
-        /* Content styles */
-        .tab-content {
-            display: none;
-            padding: 40px;
-        }
-
-        /* Active tab styles */
-        .active {
-            background-color: #ccc;
+        .error {
+            color: red;
         }
     </style>
-</head>
-<body>
-    <header>
-        <h1>Welcome to Modern Tabbed Website</h1>
-    </header>
-    <div class="container">
-        <!-- Tabs -->
-        <div class="tabs">
-            <div class="tab" onclick="openTab('tab1')">Tab 1</div>
-            <div class="tab" onclick="openTab('tab2')">Tab 2</div>
-            <div class="tab" onclick="openTab('tab3')">Tab 3</div>
-        </div>
-
-        <!-- Content for each tab -->
-        <div id="tab1" class="tab-content">
-            <h2>Tab 1 Content</h2>
-            <p>This is the content for Tab 1. Replace this text with your own content.</p>
-        </div>
-        <div id="tab2" class="tab-content">
-            <h2>Tab 2 Content</h2>
-            <p>This is the content for Tab 2. Replace this text with your own content.</p>
-        </div>
-        <div id="tab3" class="tab-content">
-            <h2>Tab 3 Content</h2>
-            <p>This is the content for Tab 3. Replace this text with your own content.</p>
-        </div>
-    </div>
-
     <script>
-        // Function to open a tab and hide other tabs
-        function openTab(tabName) {
-            var i;
-            var tabContent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabContent.length; i++) {
-                tabContent[i].style.display = "none";
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            if (password === "123") {
+                window.location.href = "protected.html";
+            } else {
+                document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
             }
-            var tabs = document.getElementsByClassName("tab");
-            for (i = 0; i < tabs.length; i++) {
-                tabs[i].classList.remove("active");
-            }
-            document.getElementById(tabName).style.display = "block";
-            event.currentTarget.classList.add("active");
         }
     </script>
+</head>
+<body>
+    <div class="container">
+        <h2>Please Enter Password</h2>
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="checkPassword()">Submit</button>
+        <p id="error-message" class="error"></p>
+    </div>
 </body>
 </html>
