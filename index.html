@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Password Protected Page</title>
+    <title>Password Layer 1</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -29,7 +29,7 @@
         function checkPassword() {
             var password = document.getElementById("password").value;
             if (password === "123") {
-                window.location.href = "protected.html";
+                window.location.href = "layer2.html";
             } else {
                 document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
             }
@@ -38,7 +38,7 @@
 </head>
 <body>
     <div class="container">
-        <h2>Please Enter Password</h2>
+        <h2>Password Layer 1</h2>
         <input type="password" id="password" placeholder="Password">
         <button onclick="checkPassword()">Submit</button>
         <p id="error-message" class="error"></p>
