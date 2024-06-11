@@ -65,7 +65,7 @@
         function checkPassword() {
             var password = document.getElementById("password").value;
             if (password === "345") {
-                alert("Congratulations! You've successfully completed all layers.");
+                window.location.href = "protected.html";
             } else {
                 document.getElementById("error-message").textContent = "Incorrect password. Please try again.";
             }
@@ -74,7 +74,7 @@
 </head>
 <body>
     <video class="bg-video" autoplay loop muted>
-        <source src="video.mp4" type="video/mp4">
+        <source src="video.mov" type="video/mp4">
         Your browser does not support the video tag.
     </video>
     <div class="container">
